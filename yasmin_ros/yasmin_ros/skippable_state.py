@@ -85,6 +85,7 @@ class SkippableState(State):
         return Trigger.Response()
     
     def execute(self, blackboard: Blackboard) -> str:
+        outcome = WAITING
         while True:
             if self._execute_handler: 
                 outcome = self._execute_handler(blackboard)
